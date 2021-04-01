@@ -1,0 +1,8 @@
+{
+  "name": "thumb-d-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/iamprompt/thumb-d-api.git",
+  "author": "wearedprompt <wearedprompt@gmail.com>",
+  "license": "MIT"
+}
