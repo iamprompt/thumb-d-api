@@ -1,6 +1,7 @@
 {
   "name": "functions",
   "scripts": {
+    "dev": "concurrently 'yarn build -w' 'yarn serve'",
     "build": "tsc",
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
@@ -21,6 +22,7 @@
     "firebase-functions": "^3.11.0"
   },
   "devDependencies": {
+    "concurrently": "^6.0.1",
     "firebase-functions-test": "^0.2.0",
     "typescript": "^3.8.0"
   },

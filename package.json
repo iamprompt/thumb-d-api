@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/iamprompt/thumb-d-api.git",
   "author": "wearedprompt <wearedprompt@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev" : "cd ./functions && yarn dev"
+  }
 }

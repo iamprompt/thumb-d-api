@@ -4,6 +4,7 @@ import cors from 'cors'
 
 import Shops from './shops'
 import Temples from './temples'
+import Orders from './orders'
 
 const app: Application = express()
 const router: Router = express.Router()
@@ -15,6 +16,7 @@ app.use(router)
 
 router.use('/shops', Shops)
 router.use('/temples', Temples)
+router.use('/orders', Orders)
 
 router.get('/', (req: Request, res: Response) => {
   return res.send({ status: 'success', payload: 'API is working' })

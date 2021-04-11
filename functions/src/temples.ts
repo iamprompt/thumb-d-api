@@ -1,10 +1,10 @@
 import express, { Router } from 'express'
-import { admin } from './utils/config'
+import { db } from './utils/config'
 
 const router: Router = express.Router()
 
 router.get('/', async (req, res) => {
-  const templeRef = admin.firestore().collection('temples')
+  const templeRef = db.collection('temples')
   const templeSnapshot = await templeRef.get()
 
   const templeRes = await Promise.all(
@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
 router.get('/:tId', async (req, res) => {
   const { tId } = req.params
 
-  const templeRef = admin.firestore().collection('temples')
+  const templeRef = db.collection('temples')
   const templeDocsRef = templeRef.doc(tId)
   const templeSnapshot = await templeDocsRef.get()
 
@@ -49,7 +49,7 @@ router.get('/:tId', async (req, res) => {
   const templeData = templeSnapshot.data()
   const requestData = await Promise.all(
     requestSnapshot.docs.map(async (d) => {
-      const shopRef = admin.firestore().collectionGroup('products')
+      const shopRef = db.collectionGroup('products')
       const searchSnapshot = await shopRef
         .where('name', '==', d.data().name)
         .get()
